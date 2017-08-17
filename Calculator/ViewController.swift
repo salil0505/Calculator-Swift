@@ -50,5 +50,19 @@ class ViewController: UIViewController {
     
     displayValue = brain.result
   }
+  
+  var savedProgram: CalculatorBrain.PropertyList!
+  
+  @IBAction func save() {
+    savedProgram = brain.program
+  }
+  
+  @IBAction func restore() {
+    if savedProgram != nil {
+      brain.program = savedProgram!
+      displayValue = brain.result
+    }
+  }
+  
 }
 
